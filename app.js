@@ -111,4 +111,23 @@ numbers.sort(function(x, y) {
     // return y - x; reverse
 });
 
-// 013
+// OBJECT LITERAL - is a reference type, not a primitive type
+
+// key - value pair
+const person = {
+    first: "Rommel",
+    age: 30,
+    hobbies: ['sex', 'ps4', 'sleep'],
+    address: {
+        city: 'Manila',
+        country: 'Philippines'
+    },
+    greet: function() {
+        console.log('Hello');
+    }
+}
+
+let rommel = person;
+// console.log(rommel); to access the whole object
+// console.log(rommel.first); to access the first variable
+// this keyword is used to access property inside the function
