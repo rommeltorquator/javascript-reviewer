@@ -130,4 +130,34 @@ const person = {
 let rommel = person;
 // console.log(rommel); to access the whole object
 // console.log(rommel.first); to access the first variable
-// this keyword is used to access property inside the function
+// the this keyword is used to access property inside the function
+
+// DATE AND TIME
+const today = new Date();
+// const birthday = new Date('10-09-1990'); month, day, year
+const birthday = new Date('September 10 1990');
+
+// review different Date get methods and Date set methods
+
+
+// IF STATEMENTS, COMPARISON OPERATORS, LOGICAL OPERATORS, you already know this shit
+
+// SWITCH OPERATOR
+const color = 'orange';
+
+switch(color) {
+    case 'orange':
+        console.log(`Color is ${color}`);
+        break;
+    case 'blue':
+        console.log(`Color is ${color}`);
+        break;
+    case 'green':
+        console.log(`Color is ${color}`);
+        break;
+    default:
+        console.log('none of the above');
+        break;
+}
+
+// 017
