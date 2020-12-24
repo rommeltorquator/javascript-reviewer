@@ -160,4 +160,91 @@ switch(color) {
         break;
 }
 
-// 017
+// FUNCTION DECLARATION
+
+function greet(){
+    // console.log("Hello");
+    return "Hello";
+}
+
+greet(); // to invoke the function
+
+function greet(first, last){
+    // console.log("Hello");
+    return "Hello" + first + last;
+}
+
+// default parameters
+function greet(first="Toshi", last="Iverson"){
+    // console.log("Hello");
+    return "Hello" + first + last;
+}
+
+// function expressions
+const greet = function(){
+    return 'Hello';
+}
+
+// IIFE, can also have parameters
+(function() {
+    return 'this is IIFE';
+})();
+
+(function(name) {
+    return 'this is IIFE '+ name;
+})('Rommel');
+
+// property methods is a function inside an object, you already know this shit
+
+
+// LOOPS, for while, do while
+// use for loop if you know the number of iterations, use while if no certain number of iterations
+
+for(let i = 0; i < 5; i++) {
+    console.log(i);
+}
+
+let i = 0;
+
+while(i < 4) {
+    console.log(i);
+    i++;
+}
+
+// do while will run 1 time no matter what
+do {
+    console.log(i);
+} while(i < 5);
+
+// looping arrays using forEach
+let names = ['ogre', 'meepo', 'lion', 'zeus'];
+
+names.forEach(function(name) {
+    console.log(name);
+});
+
+// map
+const sweetArray = [2, 3, 4, 5, 35]
+const sweeterArray = sweetArray.map(sweetItem => sweetItem * 2);
+
+const customers = [
+    {id: 1, name: 'Rommel'},
+    {id: 2, name: 'Melo'},
+    {id: 3, name: 'Toshi'},
+]
+
+// return an array containing the user ids
+const ids = customers.map(user => user.id);
+
+// for in loop
+var person = {fname:"John", lname:"Doe", age:25};
+
+var text = "";
+var x;
+for (x in person) { // x is the key, you can add another variable for value
+  text += person[x] + " ";
+} 
+
+// go back to window topic
+
+// let, const and var
