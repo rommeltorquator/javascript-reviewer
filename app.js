@@ -236,7 +236,7 @@ const customers = [
 // return an array containing the user ids
 const ids = customers.map(user => user.id);
 
-// for in loop
+// for in loop, for looping objects
 var person = {fname:"John", lname:"Doe", age:25};
 
 var text = "";
@@ -248,3 +248,77 @@ for (x in person) { // x is the key, you can add another variable for value
 // go back to window topic
 
 // let, const and var
+
+// DOM Manipulation
+// DOM selectors for single element
+
+document.getElementById('main')
+
+document.getElementById('main').id
+document.getElementById('main').className
+document.getElementById('main').style.backgroundColor = 'orange';
+
+document.getElementById('main').textContent = 'Main text';
+document.getElementById('main').innerText = 'Main text';
+document.getElementById('main').innerHTML = '<p>adding an inner HTML</p>';
+
+document.querySelector('#main')
+document.querySelector('.main')
+document.querySelector('p') // selecting the first p element
+document.querySelector('p a') // nested elements
+
+// DOM selector for multiple elements
+
+document.getElementsByClassName('btn') // can be access via index
+document.getElementsByTagName('li')
+document.querySelectorAll('.btn')
+document.querySelectorAll('li:nth-child(even')
+
+// converting an html collection into an array
+
+
+// TRAVERSING THE DOM
+// get the children nodes of parent element
+parent.children // returns an html collection of child elements inside the parent element
+parent.children[0] // accessible via index
+
+parent.firstElementChild // selecting the first child
+
+child.parentElement // selecting the parent element
+child.nextElementSibling
+child.previousElementSibling
+
+
+// create element, adding id's, classes and attributes
+const li = document.createElement('li');
+li.className = 'text-center'; // adding class to the li element
+li.className = 'text-center bold-text'; // adding class to the li element
+li.id = 'main-list'; // adding id
+li.setAttribute('title', 'Main list'); // adding title attribute
+
+// append child
+li.appendChild(document.createTextNode('Hello World'));
+
+// removing replacing elements
+// replace element
+mainDiv.replaceChild(newTitle, oldTitle);
+
+// remove element
+lis[2].remove();
+list.removeChild(lis[3]); // removing child element through parent element
+
+// classes
+li.classList.add('new-class');
+li.classList.remove('new-class');
+li.classList[0] // access a class through index
+
+
+// attributes
+li.getAttribute('class'); // returns the classes
+li.setAttribute('title', 'Main list'); // adding title attribute
+li.hasAttribute('class'); // returns true or false
+
+li.removeAttribute('href');
+
+
+// 028
