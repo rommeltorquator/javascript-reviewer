@@ -312,7 +312,6 @@ li.classList.add('new-class');
 li.classList.remove('new-class');
 li.classList[0] // access a class through index
 
-
 // attributes
 li.getAttribute('class'); // returns the classes
 li.setAttribute('title', 'Main list'); // adding title attribute
@@ -320,5 +319,41 @@ li.hasAttribute('class'); // returns true or false
 
 li.removeAttribute('href');
 
+// EVENT LISTENERS
+btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    // e.target
+    // e.type
+    // e.timeStamp
+});
 
-// 028
+// keyboard events
+// dblclick, mousedown, mouseup, mouseover, mouseenter, mouseleave, mousemove
+
+// keyboard and input events
+// add e.preventDefault() on form submit
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    console.log(input.value); // shows the value of a specific input
+});
+
+input.addEventListener('keydown', function(e) {
+    console.log(e.target.value);
+});
+
+// keyup, keypress, focus, blur, cut, paste, input
+// change is for select html tag
+
+// EVENT BUBBLING and EVENT DELEGATION
+
+document.body.addEventListener('click', function(e) {
+    if(e.target.classList.contains('btn btn-primary')) {
+        console.log('Specific item targeted!');
+
+        e.target.parentElement.remove();
+        // e.target.parentElement.parentElement.remove();
+        // e.target.parentElement.parentElement.parentElement.remove();
+    }
+});
+
+// 033
