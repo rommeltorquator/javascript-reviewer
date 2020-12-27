@@ -3,6 +3,7 @@
 // alert("This is it!");
 // console.log("Hello World");
 // console.table({a: "1", b: "2"});
+// let name = prompt("Enter your name: ");
 
 // single line comment
 
@@ -13,6 +14,7 @@
 */
 
 // var, let, const
+// let is block scoped, var is function scoped
 // use camel case for naming variables, or underscore
 
 // primitive data type = string, bool, number, null, undefined
@@ -20,17 +22,15 @@
 // reference data types = arrays, object literal, function, dates
 
 var name = "Rommel";
-let hobbies = ['sex', 'basketball'];
-console.log(typeof hobbies);
+let hobbies = ['sleep', 'basketball'];
+console.log(typeof hobbies); // shows what data type
 
 // TYPE CONVERSION
-
 let name = String(5);
 let name = Number('5');
 let name = parseInt('5');
 
 // MATH METHODS
-
 let num = 1;
 num = Math.round(2.99); // 3
 num = Math.ceil(2.99); // 3
@@ -48,14 +48,13 @@ num = Math.random();
 num = Math.floor(Math.random() * 20 + 1);
 
 // STRING METHODS
-
 let first = 'Rommel';
 let last = 'Torquator';
 let full = first + ' ' + last; // concatenate
 
 full += last; // append
 
-// console.log(full.length);
+// console.log(full.length); returns the number of characters
 // console.log(first.concat(' ', last)); Rommel TorquatorTorquator
 
 full = first.toUpperCase();
@@ -68,21 +67,18 @@ full = first.toLowerCase();
 full = first.substr(0, 3);
 full = first.slice(0, 3); // the same as substring
 
-full = first.split(' '); // returns an array that is separated using the space
+full = fullName.split(' '); // returns an array that is separated using the space
 
 full = first.replace('Rommel', 'Melo');
-
 // console.log(full.includes('Rommel')); returns true or false
 
 // TEMPLATE LITERAL
-
 const n = "rommel";
 const a = 30;
 
 const combined = `My name is ${n}, and I am ${a} years of age`;
 
 // ARRAYS AND ARRAY METHODS
-
 const heroes = ['Ogre', 'Meepo', 'Lion', 'Appa'];
 const numbers = [1, 2, 3, 4];
 
@@ -98,7 +94,6 @@ heroes.pop(); // removes the last item
 
 heroes.unshift('Sniper'); // adds an item on the front
 heroes.shift(); // removes an item on the front
-
 
 heroes.splice(1, 1); // put the index on the parameter
 heroes.reverse();
@@ -139,12 +134,10 @@ const birthday = new Date('September 10 1990');
 
 // review different Date get methods and Date set methods
 
-
 // IF STATEMENTS, COMPARISON OPERATORS, LOGICAL OPERATORS, you already know this shit
 
 // SWITCH OPERATOR
 const color = 'orange';
-
 switch(color) {
     case 'orange':
         console.log(`Color is ${color}`);
@@ -161,7 +154,6 @@ switch(color) {
 }
 
 // FUNCTION DECLARATION
-
 function greet(){
     // console.log("Hello");
     return "Hello";
@@ -196,8 +188,7 @@ const greet = function(){
 
 // property methods is a function inside an object, you already know this shit
 
-
-// LOOPS, for while, do while
+// LOOPS, for while, do while, forEach, for in
 // use for loop if you know the number of iterations, use while if no certain number of iterations
 
 for(let i = 0; i < 5; i++) {
@@ -216,7 +207,7 @@ do {
     console.log(i);
 } while(i < 5);
 
-// looping arrays using forEach
+// looping arrays using forEach, used in looping arrays
 let names = ['ogre', 'meepo', 'lion', 'zeus'];
 
 names.forEach(function(name) {
@@ -247,11 +238,9 @@ for (x in person) { // x is the key, you can add another variable for value
 
 // go back to window topic
 
-// let, const and var
-
 // DOM Manipulation
-// DOM selectors for single element
 
+// DOM selectors for single element
 document.getElementById('main')
 
 document.getElementById('main').id
@@ -268,14 +257,12 @@ document.querySelector('p') // selecting the first p element
 document.querySelector('p a') // nested elements
 
 // DOM selector for multiple elements
-
-document.getElementsByClassName('btn') // can be access via index
+document.getElementsByClassName('btn') // can be access via index, returns a collection
 document.getElementsByTagName('li')
 document.querySelectorAll('.btn')
 document.querySelectorAll('li:nth-child(even')
 
 // converting an html collection into an array
-
 
 // TRAVERSING THE DOM
 // get the children nodes of parent element
@@ -288,11 +275,10 @@ child.parentElement // selecting the parent element
 child.nextElementSibling
 child.previousElementSibling
 
-
 // create element, adding id's, classes and attributes
 const li = document.createElement('li');
 li.className = 'text-center'; // adding class to the li element
-li.className = 'text-center bold-text'; // adding class to the li element
+li.className = 'text-center bold-text'; // adding classes to the li element
 li.id = 'main-list'; // adding id
 li.setAttribute('title', 'Main list'); // adding title attribute
 
@@ -341,7 +327,7 @@ input.addEventListener('keydown', function(e) {
     console.log(e.target.value);
 });
 
-// keyup, keypress, focus, blur, cut, paste, input
+// input events, keyup, keypress, focus, blur, cut, paste, input
 // change is for select html tag
 
 // EVENT BUBBLING and EVENT DELEGATION
@@ -356,4 +342,69 @@ document.body.addEventListener('click', function(e) {
     }
 });
 
-// 033
+// OOP JS
+// constructor and the this keyword
+
+// prototype vs constructor methods
+Person.prototype.greet = function() {
+    console.log('This is a prototype method, used to avoid flooding the constructor with methods');
+}
+
+// prototypal inheritance
+function Person(name, age) {
+    this.name = name;
+    this.age = age;    
+}
+
+Person.prototype.greet = function() {
+    return `Hello! My name is ${this.name} and ${this.age}`;
+}
+
+function Customer(name, age, number) {
+    Person.call(this, name, age); // this is the inherited attribute from Person class
+    this.number = number;
+}
+
+// inherit the person prototype greet 
+Customer.prototype = Object.create(Person.prototype);
+// the instance of customers can now use the greet method
+
+// ES6 classes
+class Person {
+    constructor(first, last) {
+        this.first = first;
+        this.last = last;
+    }
+
+    greet() {
+        return 'Hello!';
+    }
+
+    changeFirst(n) {
+        this.first = n;
+    }
+
+    // static method, can only be access using the main class, instances of this class have no access to this static method
+    static addNumbers(x, y){
+        return x + y;
+    }
+}
+
+const rommel = new Person('Rommel', 'Pogi');
+rommel.greet();
+rommel.changeFirst('Toshi');
+
+console.log(Person.addNumbers(10, 5)); // invoking a static method, the instance cannot use the static method
+
+// sub classes
+class Customer extends Person { // this customer class inherits from person class
+    constructor(first, last, phone, membership) {
+        super(first, last); // constructor from person class
+
+        this.phone = phone;
+        this.membership = membership;
+    }
+}
+
+const meepo = new Customer('Meepo', 'Pogi', '6666', 'gold');
+meepo.greet() // instance of customer is able to access method from Person
