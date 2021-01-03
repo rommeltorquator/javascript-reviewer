@@ -408,3 +408,6 @@ class Customer extends Person { // this customer class inherits from person clas
 
 const meepo = new Customer('Meepo', 'Pogi', '6666', 'gold');
 meepo.greet() // instance of customer is able to access method from Person
+
+// AJAX
+
