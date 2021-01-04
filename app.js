@@ -234,7 +234,11 @@ var text = "";
 var x;
 for (x in person) { // x is the key, you can add another variable for value
   text += person[x] + " ";
-} 
+}
+
+for (let k in customer) {
+    console.log(k, customer[k]);
+}
 
 // go back to window topic
 
