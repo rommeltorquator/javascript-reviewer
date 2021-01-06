@@ -413,5 +413,88 @@ class Customer extends Person { // this customer class inherits from person clas
 const meepo = new Customer('Meepo', 'Pogi', '6666', 'gold');
 meepo.greet() // instance of customer is able to access method from Person
 
-// AJAX
+// AJAX go to ajax.js
 
+// ES 6
+
+// const - cannot reassign any new value inside a const, use const if value won't be changed
+// let - can assign new value, block scope
+// var - global scope, can be overwritten
+
+// arrow functions
+const sum = (a, b) => {
+    return a + b;
+}
+
+// destructuring of arrays and objects
+const user = {
+    name: "Rommel",
+    age: 30
+}
+
+// const {name, age} = user;
+const {name: Pangalan, age: Edad} = user; // used to change the variable name
+
+const os = ['windows', 'linux', 'mac'];
+const [os1, os2, os3] = os;
+
+// spread operator
+const heroes = ['ogre', 'meepo', 'lion', 'appa'];
+const heroCopy = [...heroes];
+const heroCopy = [...heroes, 'sven', 'gyro']; // too add another elements outside of the heroes array
+
+const user = {
+    name: "Rommel",
+    age: 30
+}
+
+const user2 = {
+    ...user,
+    email: "rommelpogi@gmail.com"
+};
+
+// also used for other math functions like max, min
+const r = Math.max(...numbers);
+
+// rest parameters
+const names = ['Toshi', 'Melo', 'AI'];
+function loopNames(...args) { // you can put an array as an argument here
+    for (x of args ) {
+        console.log(x);
+    }
+}
+loopNames(names);
+
+// template literals
+console.log(`This is a template literal ${name} ${age} ${job}`);
+
+// map function
+const users = [
+    {
+        id: 1,
+        name: "Rommel"
+    },
+    {
+        id: 2,
+        name: "Melo"
+    },
+];
+
+const idOnly = users.map(user => user.id); // stores only the ids in an array
+
+// filter function
+const users = [
+    {
+        id: 1,
+        name: "Rommel",
+        deleted: true
+    },
+    {
+        id: 2,
+        name: "Melo",
+        deleted: false
+    },
+];
+const deletedUsers = users.filter(user => user.deleted); // creates an array of user whose deleted is valued true
+
+// classes, constructor, methods, static, instances, inheritance
